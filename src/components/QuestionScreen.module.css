@@ -1,0 +1,146 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.progress {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--green-primary);
+  transition: width var(--transition-normal);
+}
+
+.questionCard {
+  background: var(--bg-card);
+  border: 2px solid var(--bg-elevated);
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.questionText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.category {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green-primary);
+  opacity: 0.7;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answerBtn {
+  background: var(--bg-card);
+  border: 2px solid var(--bg-elevated);
+  color: var(--text-primary);
+  padding: 18px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.answerBtn:hover:not(:disabled) {
+  border-color: var(--green-primary);
+  background: var(--bg-elevated);
+}
+
+.answerBtn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.answerBtn.correct {
+  background: var(--green-primary);
+  border-color: var(--green-primary);
+  color: var(--bg-dark);
+}
+
+.answerBtn.incorrect {
+  background: var(--incorrect);
+  border-color: var(--incorrect);
+  color: white;
+}
+
+.answerBtn.dimmed {
+  opacity: 0.4;
+}
+
+.feedback {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px 48px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  animation: bounce 0.5s ease;
+  z-index: 100;
+}
+
+.feedbackCorrect {
+  background: var(--green-primary);
+  color: var(--bg-dark);
+  box-shadow: 0 0 60px var(--green-glow);
+}
+
+.feedbackIncorrect {
+  background: var(--incorrect);
+  color: white;
+  box-shadow: 0 0 60px rgba(255, 82, 82, 0.4);
+}
+
+@media (max-width: 480px) {
+  .questionText {
+    font-size: 1.1rem;
+  }
+
+  .answerBtn {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+  }
+
+  .feedback {
+    padding: 16px 32px;
+    font-size: 1.5rem;
+  }
+}

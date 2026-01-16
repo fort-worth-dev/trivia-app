@@ -2,6 +2,8 @@ import { useGame } from '../context/GameContext';
 import { CATEGORIES, QUESTION_COUNTS, type Difficulty } from '../types/game';
 import { generateQuestions } from '../services/api';
 import styles from './SetupScreen.module.css';
+import photo1 from '../assets/photo1.jpg';
+import photo2 from '../assets/photo2.jpg';
 
 const DIFFICULTIES: { id: Difficulty; label: string }[] = [
   { id: 'easy', label: 'EASY' },
@@ -36,8 +38,12 @@ export function SetupScreen() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>TRICIA</h1>
-        <h2 className={styles.subtitle}>TRIVIA</h2>
+        <img src={photo1} alt="" className={styles.headerImage} />
+        <div className={styles.titleContainer}>
+          <h1 className={styles.title}>TRICIA</h1>
+          <h2 className={styles.subtitle}>TRIVIA</h2>
+        </div>
+        <img src={photo2} alt="" className={styles.headerImage} />
       </header>
 
       <section className={styles.section}>

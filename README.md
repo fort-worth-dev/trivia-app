@@ -13,9 +13,10 @@ A modern trivia game built with React, TypeScript, and Vite. Questions are dynam
 ## Tech Stack
 
 - **Frontend**: React 19, TypeScript, Vite
-- **Backend**: Express.js, Node.js
+- **Backend**: Netlify Functions (serverless)
 - **AI**: Anthropic Claude API
 - **Styling**: CSS Modules
+- **Deployment**: Netlify
 
 ## Getting Started
 
@@ -50,6 +51,10 @@ ANTHROPIC_API_KEY=your_api_key_here
 
 ### Running the Application
 
+#### Local Development
+
+For local development, you can run the Express server:
+
 1. Start the backend server:
 ```bash
 npm run server
@@ -64,6 +69,22 @@ npm run dev
 
 The app will be available at `http://localhost:5173`
 
+#### Using Netlify CLI (Recommended)
+
+Alternatively, you can use Netlify CLI to run the full stack locally:
+
+1. Install Netlify CLI globally:
+```bash
+npm install -g netlify-cli
+```
+
+2. Start the local development environment:
+```bash
+netlify dev
+```
+
+This will start both the frontend and Netlify Functions locally.
+
 ### Building for Production
 
 ```bash
@@ -71,6 +92,16 @@ npm run build
 ```
 
 The production build will be in the `dist` directory.
+
+### Deploying to Netlify
+
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Set the following environment variable in Netlify:
+   - `ANTHROPIC_API_KEY`: Your Anthropic API key
+4. Deploy!
+
+The build command and publish directory are already configured in `netlify.toml`.
 
 ## Project Structure
 
@@ -82,7 +113,9 @@ tricia-trivia/
 │   ├── services/        # API services
 │   ├── styles/          # Global styles
 │   └── types/           # TypeScript type definitions
-├── server/              # Express backend
+├── netlify/
+│   └── functions/       # Netlify serverless functions
+├── server/              # Express backend (for local dev)
 └── public/              # Static assets
 ```
 

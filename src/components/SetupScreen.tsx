@@ -1,5 +1,5 @@
 import { useGame } from '../context/GameContext';
-import { CATEGORIES, QUESTION_COUNTS, Difficulty } from '../types/game';
+import { CATEGORIES, QUESTION_COUNTS, type Difficulty } from '../types/game';
 import { generateQuestions } from '../services/api';
 import styles from './SetupScreen.module.css';
 

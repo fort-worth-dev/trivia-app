@@ -1,4 +1,4 @@
-import { Question, Difficulty } from '../types/game';
+import { type Question, type Difficulty } from '../types/game';
 
 export async function generateQuestions(
   categories: string[],

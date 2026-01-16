@@ -1,5 +1,5 @@
-import { createContext, useContext, useReducer, ReactNode } from 'react';
-import { GameState, GameAction, Question } from '../types/game';
+import { createContext, useContext, useReducer, type ReactNode } from 'react';
+import { type GameState, type GameAction, type Question } from '../types/game';
 
 const initialState: GameState = {
   phase: 'setup',
